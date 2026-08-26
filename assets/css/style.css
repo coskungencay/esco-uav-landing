@@ -101,6 +101,8 @@ main,header,footer{position:relative;z-index:1}
 }
 .hero h1 .thin{font-weight:300;color:var(--text-dim);display:block;font-size:.5em;
   letter-spacing:-0.01em;margin-top:12px}
+.hero h1 .pre{font-weight:300;color:var(--text-mute);font-size:.46em;display:block;
+  letter-spacing:.18em;margin-bottom:6px;font-family:var(--mono)}
 .hero-lede{color:var(--text-dim);font-size:clamp(16px,2vw,19px);max-width:640px;margin-top:22px}
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .tag{
