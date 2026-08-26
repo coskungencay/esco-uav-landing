@@ -94,12 +94,17 @@ export function initViewer(opts){
   pivot.add(root); scene.add(pivot);
 
   const parts = new Map();
-  const home  = { d: 2600, az: D(42), pol: D(64) };
+  /* Kahraman açısı: yatay/oturmuş 3/4. polar 84° = ufuk çizgisinin 6° üstü. */
+  const home  = { d: 2600,
+                  az:  D(opts.azimuthDeg ?? 42),
+                  pol: D(opts.polarDeg   ?? 84) };
   let worldBox = null, ready = false, mode = 'exterior';
   const focus = {};
   const curTarget = new THREE.Vector3(), wantTarget = new THREE.Vector3();
 
-  const AZ_RANGE = D(46), POL_MIN = D(52), POL_MAX = D(94);
+  const AZ_RANGE = D(52);        /* sola-saga oynama payi */
+  /* Dikey eksen KILITLI: kamera hep ayni yukseklikte kalir,
+     ucak yatay/oturmus goruntusunu korur (serbest 360 yok). */
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
@@ -107,17 +112,26 @@ export function initViewer(opts){
   controls.enablePan  = false;
   controls.enableZoom = false;          /* kadraj korunsun */
   controls.rotateSpeed = 0.40;
-  controls.minPolarAngle = POL_MIN;
-  controls.maxPolarAngle = POL_MAX;
+  /* DİKEY KİLİT: min=max => kamera yüksekliği sabit, yalnız sola-sağa döner */
+  controls.minPolarAngle = controls.maxPolarAngle = home.pol;
   controls.minAzimuthAngle = home.az - AZ_RANGE;
   controls.maxAzimuthAngle = home.az + AZ_RANGE;
 
   /* Kadrajı gerçek izdüşüme göre hesapla. Uçak çok geniş ama ince olduğu için
      küresel sınır kullanmak onu çerçevede küçük bırakıyor. En/boy değişince
      (mobil dikey!) yeniden hesaplanır. */
+  /* Mesafeyi TEK açı için değil, izin verilen sola-sağa aralığının TAMAMI için
+     hesapla; böylece kullanıcı çevirirken kanat ucu kadrajdan taşmaz. */
   function distanceFor(box){
     if(!box || box.isEmpty()) return home.d;
-    const dir = new THREE.Vector3().setFromSphericalCoords(1, home.pol, home.az).normalize();
+    let worst = 0;
+    for(let i = 0; i <= 8; i++){
+      worst = Math.max(worst, distanceAt(box, home.az - AZ_RANGE + (2*AZ_RANGE)*i/8));
+    }
+    return worst;
+  }
+  function distanceAt(box, az){
+    const dir = new THREE.Vector3().setFromSphericalCoords(1, home.pol, az).normalize();
     const rgt = new THREE.Vector3().crossVectors(dir, new THREE.Vector3(0,1,0)).normalize();
     const upv = new THREE.Vector3().crossVectors(rgt, dir).normalize();
     const c = box.getCenter(new THREE.Vector3());
@@ -130,7 +144,7 @@ export function initViewer(opts){
       ez = Math.max(ez, Math.abs(v.dot(dir)));
     }
     const vF = D(camera.fov), hF = 2*Math.atan(Math.tan(vF/2)*camera.aspect);
-    const margin = camera.aspect < 1 ? 1.10 : 1.00;
+    const margin = camera.aspect < 1 ? 1.04 : 0.90;   /* dolu kadraj (en-kötü-açı garantili) */
     return (Math.max(ey/Math.tan(vF/2), ex/Math.tan(hF/2)) + ez*0.22) * margin;
   }
   function refit(){
@@ -288,13 +302,11 @@ export function initViewer(opts){
     if(!reduce){
       if(!dragging){ idle += dt; } else { idle = 0; }
       const gate = Math.min(1, Math.max(0, (idle-0.9)/1.2));    /* yumuşak devreye girme */
-      drift += dt * 0.17 * gate;
-      yaw   += ((Math.sin(drift) * D(8.5) * gate) - yaw) * 0.05;
-      pitch += ((Math.cos(drift*0.66) * D(2.2) * gate) - pitch) * 0.05;
+      drift += dt * 0.15 * gate;
+      yaw   += ((Math.sin(drift) * D(7.0) * gate) - yaw) * 0.05;
       px += (tx - px) * 0.04;
-      py += (ty - py) * 0.04;
-      pivot.rotation.y = yaw + px * 0.075;
-      pivot.rotation.x = pitch - py * 0.035;
+      pivot.rotation.y = yaw + px * 0.06;      /* yalnız sola-sağa */
+      pivot.rotation.x = 0;
     }
     /* mod değişince kamera hedefine yumuşak geçiş */
     if(curTarget.distanceToSquared(wantTarget) > 1e-4){

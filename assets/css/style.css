@@ -113,7 +113,7 @@ main,header,footer{position:relative;z-index:1}
 /* ---------- 3D görüntüleyici ---------- */
 .viewer-shell{margin-top:clamp(30px,4.5vw,48px);position:relative}
 .viewer{
-  position:relative;width:100%;height:clamp(440px,74vh,760px);
+  position:relative;width:100%;height:clamp(460px,82vh,900px);
   border:1px solid var(--line);border-radius:10px;overflow:hidden;
   background:
     radial-gradient(ellipse 70% 55% at 50% 42%,rgba(79,209,224,.075),transparent 70%),

@@ -12,15 +12,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=c6fb773b63">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070a0f'/%3E%3Cpath d='M4 17h24M16 6v22M9 11l14 10M23 11L9 21' stroke='%234fd1e0' stroke-width='1.6' fill='none'/%3E%3Ccircle cx='16' cy='17' r='3' fill='%234fd1e0'/%3E%3C/svg%3E">
 <script type="importmap">
 {"imports":{
-  "three":"./assets/js/three.module.js",
-  "three/GLTFLoader":"./assets/js/GLTFLoader.js",
-  "three/OrbitControls":"./assets/js/OrbitControls.js",
-  "three/RoomEnvironment":"./assets/js/RoomEnvironment.js",
-  "three/BufferGeometryUtils":"./assets/utils/BufferGeometryUtils.js"
+  "three":"./assets/js/three.module.js?v=a762b8588c",
+  "three/GLTFLoader":"./assets/js/GLTFLoader.js?v=9ad07e4783",
+  "three/OrbitControls":"./assets/js/OrbitControls.js?v=fb493b163e",
+  "three/RoomEnvironment":"./assets/js/RoomEnvironment.js?v=1572ee3935",
+  "three/BufferGeometryUtils":"./assets/utils/BufferGeometryUtils.js?v=00ecb96bea"
 }}
 </script>
 </head>
@@ -98,7 +98,7 @@
         <button class="vbtn" data-mode="zones">Görev Bölgeleri</button>
         <span class="vbtn-sep"></span>
         <button class="vbtn" data-act="reset">Açıyı Sıfırla</button>
-        <span class="vtools-note mono">Sürükleyerek açıyı değiştirin — kadraj korunur</span>
+        <span class="vtools-note mono">Sola sağa sürükleyin — kadraj ve yükseklik kilitli</span>
       </div>
     </div>
     </div>
@@ -386,11 +386,11 @@
     </div>
 
     <div class="gal rv" style="margin-top:24px">
-      <figure><img src="assets/img/S34_DECK_ONLY.png" alt="PB-AF01 aviyonik güverte" loading="lazy" width="1600" height="1000">
+      <figure><img src="assets/img/S34_DECK_ONLY.png?v=5dcba9eb49" alt="PB-AF01 aviyonik güverte" loading="lazy" width="1600" height="1000">
         <figcaption>PB-AF01 · pad, kaburga, kablo geçişi ve strap slotları</figcaption></figure>
-      <figure><img src="assets/img/S34A_VIEW_ENGINEERING_REALITY.png" alt="Aviyonik bölmesi gerçek donanımla" loading="lazy" width="1600" height="1000">
+      <figure><img src="assets/img/S34A_VIEW_ENGINEERING_REALITY.png?v=9a6f41c9e9" alt="Aviyonik bölmesi gerçek donanımla" loading="lazy" width="1600" height="1000">
         <figcaption>Aviyonik bölmesi · gerçek Pixhawk ve Raspberry Pi geometrileriyle</figcaption></figure>
-      <figure><img src="assets/img/S34_PIXHAWK_ACCESS.png" alt="Pixhawk servis erişimi" loading="lazy" width="1600" height="1000">
+      <figure><img src="assets/img/S34_PIXHAWK_ACCESS.png?v=7c563cb790" alt="Pixhawk servis erişimi" loading="lazy" width="1600" height="1000">
         <figcaption>Servis zarfları · konnektör ve söküm yolu doğrulaması</figcaption></figure>
     </div>
   </div>
@@ -462,8 +462,8 @@
 </footer>
 
 <script type="module">
-  import { initViewer } from './assets/js/viewer.js';
-  initViewer({ host:'#viewer', model:'assets/models/esco-uav.glb',
+  import { initViewer } from './assets/js/viewer.js?v=a3fc384079';
+  initViewer({ host:'#viewer', model:'assets/models/esco-uav.glb?v=eaf651bd38',
                loader:'#vload', bar:'#vbar', hint:'#vhint' });
 </script>
 <script>
