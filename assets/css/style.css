@@ -111,9 +111,9 @@ main,header,footer{position:relative;z-index:1}
 .tag.on{border-color:var(--accent-dim);color:var(--accent);background:rgba(79,209,224,.06)}
 
 /* ---------- 3D görüntüleyici ---------- */
-.viewer-shell{margin-top:clamp(32px,5vw,52px);position:relative}
+.viewer-shell{margin-top:clamp(30px,4.5vw,48px);position:relative}
 .viewer{
-  position:relative;width:100%;height:clamp(380px,60vh,620px);
+  position:relative;width:100%;height:clamp(440px,74vh,760px);
   border:1px solid var(--line);border-radius:10px;overflow:hidden;
   background:
     radial-gradient(ellipse 70% 55% at 50% 42%,rgba(79,209,224,.075),transparent 70%),
@@ -156,6 +156,9 @@ main,header,footer{position:relative;z-index:1}
 .viewer-tools{
   display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center;
 }
+.vtools-note{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-mute);margin-left:auto}
+@media(max-width:720px){.vtools-note{display:none}}
 .vbtn{
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
   background:var(--surface);border:1px solid var(--line-2);color:var(--text-dim);

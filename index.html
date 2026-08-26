@@ -51,9 +51,9 @@
       <div class="eyebrow">Savaşan İHA · Otonom Sabit Kanat</div>
       <h1>Platform&nbsp;B<span class="thin">Çift kuyruk kirişli, itici pervaneli otonom görev platformu</span></h1>
       <p class="hero-lede">
-        2100 mm kanat açıklığı. Her ölçüsü resmî CAD'e ya da fiziksel ölçüme dayanan,
-        Fusion dijital ikizi üzerinde çakışma-çakışma doğrulanmış bir hava aracı.
-        Tahmin edilen tek bir kot yok.
+        2100 mm kanat açıklığı. Aşağıdaki model uçağın tam montajı: gövde, aviyonik
+        güverte, baskı parçaları ve gerçek Pixhawk / Raspberry Pi / GNSS donanımı —
+        hepsi dijital ikizdeki gerçek istasyonlarında. Tahmin edilen tek bir kot yok.
       </p>
       <div class="hero-tags">
         <span class="tag on">Dijital fit doğrulandı</span>
@@ -68,14 +68,14 @@
         <span class="viewer-corner vc-tl"></span><span class="viewer-corner vc-tr"></span>
         <span class="viewer-corner vc-bl"></span><span class="viewer-corner vc-br"></span>
         <div class="viewer-hud">
-          PLATFORM B · CANDIDATE_003<br>
-          KAYNAK <b>CAD DİJİTAL İKİZ</b><br>
-          BİRİM <b>MM</b> · +X BURUN / +Y SANCAK / +Z YUKARI
+          PLATFORM B · TAM MONTAJ<br>
+          GÖVDE + <b>AVİYONİK GÜVERTE</b> + GERÇEK DONANIM<br>
+          KANAT AÇIKLIĞI <b>2100.0 MM</b> · ÖLÇEK 1:1
         </div>
         <div class="viewer-hint" id="vhint">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M3 12h18M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
-          Sürükleyerek döndürün · tekerlekle yakınlaştırın
+          Sürükleyerek açıyı değiştirin
         </div>
         <div class="viewer-load" id="vload">
           Model yükleniyor
@@ -93,17 +93,14 @@
 
       <div class="viewer-tools">
         <button class="vbtn on" data-mode="exterior">Dış Hat</button>
-        <button class="vbtn" data-mode="internal">İç Yapı</button>
+        <button class="vbtn" data-mode="avionics">Aviyonik</button>
+        <button class="vbtn" data-mode="structure">İç Yapı</button>
         <button class="vbtn" data-mode="zones">Görev Bölgeleri</button>
         <span class="vbtn-sep"></span>
-        <button class="vbtn" data-view="iso">İzometrik</button>
-        <button class="vbtn" data-view="top">Üst</button>
-        <button class="vbtn" data-view="side">Yan</button>
-        <button class="vbtn" data-view="front">Ön</button>
-        <span class="vbtn-sep"></span>
-        <button class="vbtn on" data-act="spin">Otomatik Döndür</button>
-        <button class="vbtn" data-act="reset">Sıfırla</button>
+        <button class="vbtn" data-act="reset">Açıyı Sıfırla</button>
+        <span class="vtools-note mono">Sürükleyerek açıyı değiştirin — kadraj korunur</span>
       </div>
+    </div>
     </div>
   </div>
 </section>
