@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESCO-UAV · Savaşan İHA — Platform B</title>
+<meta name="description" content="ESCO-UAV Savaşan İHA takımı. Platform B: 2100 mm açıklıklı, çift kuyruk kirişli, itici pervaneli otonom sabit kanat İHA. Her ölçüsü kaynaklı, dijital ikizi doğrulanmış mühendislik projesi.">
+<meta name="theme-color" content="#070a0f">
+<meta property="og:title" content="ESCO-UAV · Savaşan İHA — Platform B">
+<meta property="og:description" content="2100 mm açıklık · çift kuyruk kirişi · itici pervane · otonom görev yazılımı. Her ölçü kaynaklı, dijital ikiz doğrulamalı.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070a0f'/%3E%3Cpath d='M4 17h24M16 6v22M9 11l14 10M23 11L9 21' stroke='%234fd1e0' stroke-width='1.6' fill='none'/%3E%3Ccircle cx='16' cy='17' r='3' fill='%234fd1e0'/%3E%3C/svg%3E">
+<script type="importmap">
+{"imports":{
+  "three":"./assets/js/three.module.js",
+  "three/GLTFLoader":"./assets/js/GLTFLoader.js",
+  "three/OrbitControls":"./assets/js/OrbitControls.js",
+  "three/RoomEnvironment":"./assets/js/RoomEnvironment.js",
+  "three/BufferGeometryUtils":"./assets/utils/BufferGeometryUtils.js"
+}}
+</script>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span class="dot"></span>ESCO<span style="color:var(--accent)">-UAV</span> <small>PLATFORM&nbsp;B</small></a>
+    <nav class="nav-links">
+      <a href="#arac">Hava Aracı</a>
+      <a href="#aviyonik">Aviyonik</a>
+      <a href="#otonomi">Otonomi</a>
+      <a href="#muhendislik">Mühendislik</a>
+      <a href="#uretim">Üretim</a>
+      <a href="#durum">Durum</a>
+    </nav>
+    <a class="nav-cta" href="#muhendislik">Teknik Dosya</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ====================== HERO ====================== -->
+<section class="section hero">
+  <div class="wrap">
+    <div class="hero-head">
+      <div class="eyebrow">Savaşan İHA · Otonom Sabit Kanat</div>
+      <h1>Platform&nbsp;B<span class="thin">Çift kuyruk kirişli, itici pervaneli otonom görev platformu</span></h1>
+      <p class="hero-lede">
+        2100 mm kanat açıklığı. Her ölçüsü resmî CAD'e ya da fiziksel ölçüme dayanan,
+        Fusion dijital ikizi üzerinde çakışma-çakışma doğrulanmış bir hava aracı.
+        Tahmin edilen tek bir kot yok.
+      </p>
+      <div class="hero-tags">
+        <span class="tag on">Dijital fit doğrulandı</span>
+        <span class="tag">Otonom görev yazılımı</span>
+        <span class="tag">Bilgisayarlı görü</span>
+        <span class="tag">3D baskı aviyonik güverte</span>
+      </div>
+    </div>
+
+    <div class="viewer-shell">
+      <div class="viewer" id="viewer">
+        <span class="viewer-corner vc-tl"></span><span class="viewer-corner vc-tr"></span>
+        <span class="viewer-corner vc-bl"></span><span class="viewer-corner vc-br"></span>
+        <div class="viewer-hud">
+          PLATFORM B · CANDIDATE_003<br>
+          KAYNAK <b>CAD DİJİTAL İKİZ</b><br>
+          BİRİM <b>MM</b> · +X BURUN / +Y SANCAK / +Z YUKARI
+        </div>
+        <div class="viewer-hint" id="vhint">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 12h18M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+          Sürükleyerek döndürün · tekerlekle yakınlaştırın
+        </div>
+        <div class="viewer-load" id="vload">
+          Model yükleniyor
+          <div class="load-bar"><i id="vbar"></i></div>
+        </div>
+      </div>
+
+      <div class="specstrip">
+        <div class="spec"><div class="spec-k">Kanat Açıklığı</div><div class="spec-v">2100<span>mm</span></div></div>
+        <div class="spec"><div class="spec-k">Toplam Uzunluk</div><div class="spec-v">1317<span>mm</span></div></div>
+        <div class="spec"><div class="spec-k">Kanat Alanı</div><div class="spec-v">0.588<span>m²</span></div></div>
+        <div class="spec"><div class="spec-k">Açıklık Oranı</div><div class="spec-v">7.5<span>AR</span></div></div>
+        <div class="spec"><div class="spec-k">Yükseklik</div><div class="spec-v">410<span>mm</span></div></div>
+      </div>
+
+      <div class="viewer-tools">
+        <button class="vbtn on" data-mode="exterior">Dış Hat</button>
+        <button class="vbtn" data-mode="internal">İç Yapı</button>
+        <button class="vbtn" data-mode="zones">Görev Bölgeleri</button>
+        <span class="vbtn-sep"></span>
+        <button class="vbtn" data-view="iso">İzometrik</button>
+        <button class="vbtn" data-view="top">Üst</button>
+        <button class="vbtn" data-view="side">Yan</button>
+        <button class="vbtn" data-view="front">Ön</button>
+        <span class="vbtn-sep"></span>
+        <button class="vbtn on" data-act="spin">Otomatik Döndür</button>
+        <button class="vbtn" data-act="reset">Sıfırla</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== HAVA ARACI ====================== -->
+<section class="section" id="arac">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">01 — Hava Aracı</div>
+      <h2>Ölçekli geometri, ölçülmüş kotlar</h2>
+      <p>Aşağıdaki çizim dekoratif değil: her kot Fusion dijital ikizinden okunan gerçek
+         CAD değeridir. Orijin, kanat kök çeyrek-veterindedir.</p>
+    </div>
+
+    <div class="drawing rv">
+      <div class="dwg-cap">
+        <span>ÜST GÖRÜNÜŞ · ÖLÇEKLİ · TÜM KOTLAR MM</span>
+        <span>PLATFORM B / CANDIDATE_003 BASELINE</span>
+      </div>
+      <svg viewBox="0 0 1024 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Platform B ust gorunus olcekli teknik cizim">
+<defs><style>.dl{stroke:#3a4657;stroke-width:.8}.dt{fill:#64718a;font:500 10px ui-monospace,monospace;letter-spacing:.08em}.cl{stroke:#2a3547;stroke-width:.7;stroke-dasharray:7 4 2 4}</style></defs>
+<line class="cl" x1="512.0" y1="48.0" x2="512.0" y2="626.8"/>
+<polygon points="512.0,282.8 932.0,290.8 932.0,386.8 512.0,410.8" fill="#9fb0c6" fill-opacity="0.2" stroke="#9fb0c6" stroke-width="1.1"/>
+<polygon points="512.0,282.8 92.0,290.8 92.0,386.8 512.0,410.8" fill="#9fb0c6" fill-opacity="0.2" stroke="#9fb0c6" stroke-width="1.1"/>
+<polygon points="740.9,393.5 887.9,393.5 887.9,367.3 740.9,367.3" fill="#f2a63b" fill-opacity="0.45" stroke="#f2a63b" stroke-width="0.9"/>
+<polygon points="283.1,393.5 136.1,393.5 136.1,367.3 283.1,367.3" fill="#f2a63b" fill-opacity="0.45" stroke="#f2a63b" stroke-width="0.9"/>
+<polygon points="602.0,600.8 614.0,600.8 614.0,338.8 602.0,338.8" fill="#3a4657" fill-opacity="0.85" stroke="#4a5768" stroke-width="0.9"/>
+<polygon points="422.0,600.8 410.0,600.8 410.0,338.8 422.0,338.8" fill="#3a4657" fill-opacity="0.85" stroke="#4a5768" stroke-width="0.9"/>
+<polygon points="372.0,600.8 652.0,600.8 652.0,520.8 372.0,520.8" fill="#9fb0c6" fill-opacity="0.2" stroke="#9fb0c6" stroke-width="1.1"/>
+<polygon points="383.2,594.8 640.8,594.8 640.8,573.2 383.2,573.2" fill="#f2a63b" fill-opacity="0.45" stroke="#f2a63b" stroke-width="0.9"/>
+<polygon points="604.6,597.8 611.4,597.8 611.4,529.8 604.6,529.8" fill="#c9d2df" fill-opacity="0.5" stroke="#c9d2df" stroke-width="0.8"/>
+<polygon points="419.4,597.8 412.6,597.8 412.6,529.8 419.4,529.8" fill="#c9d2df" fill-opacity="0.5" stroke="#c9d2df" stroke-width="0.8"/>
+<rect x="483.7" y="74.8" width="56.6" height="320.0" rx="8.0" fill="#9fb0c6" fill-opacity=".28" stroke="#9fb0c6" stroke-width="1.2"/>
+<line x1="456.0" y1="410.8" x2="568.0" y2="410.8" stroke="#4fd1e0" stroke-width="1.6" stroke-dasharray="5 4" opacity=".75"/>
+<text class="dt" x="576.0" y="414.3" fill="#4fd1e0">Ø280 İTİCİ PERVANE</text>
+<line class="dl" x1="92.0" y1="34" x2="932.0" y2="34"/><line class="dl" x1="92.0" y1="29" x2="92.0" y2="39"/><line class="dl" x1="932.0" y1="29" x2="932.0" y2="39"/><text class="dt" x="512.0" y="25" text-anchor="middle">KANAT AÇIKLIĞI 2100.0</text>
+<line class="dl" x1="416.0" y1="640.8000000000001" x2="608.0" y2="640.8000000000001"/><line class="dl" x1="416.0" y1="635.8000000000001" x2="416.0" y2="645.8000000000001"/><line class="dl" x1="608.0" y1="635.8000000000001" x2="608.0" y2="645.8000000000001"/><text class="dt" x="512.0" y="631.8000000000001" text-anchor="middle">KİRİŞ ARALIĞI 480.0</text>
+<line class="dl" x1="372.0" y1="612.8000000000001" x2="652.0" y2="612.8000000000001"/><line class="dl" x1="372.0" y1="607.8000000000001" x2="372.0" y2="617.8000000000001"/><line class="dl" x1="652.0" y1="607.8000000000001" x2="652.0" y2="617.8000000000001"/><text class="dt" x="512.0" y="603.8000000000001" text-anchor="middle">KUYRUK 700.0</text>
+<line class="dl" x1="42" y1="74.0" x2="42" y2="600.8"/><line class="dl" x1="37" y1="74.0" x2="47" y2="74.0"/><line class="dl" x1="37" y1="600.8" x2="47" y2="600.8"/><text class="dt" x="33" y="337.4" text-anchor="end" transform="rotate(-90 33 337.4)">TOPLAM UZUNLUK 1317.0</text>
+<line class="dl" x1="982.0" y1="282.8" x2="982.0" y2="410.8"/><line class="dl" x1="977.0" y1="282.8" x2="987.0" y2="282.8"/><line class="dl" x1="977.0" y1="410.8" x2="987.0" y2="410.8"/><text class="dt" x="973.0" y="346.8" text-anchor="end" transform="rotate(-90 973.0 346.8)">KÖK VETER 319.8</text>
+<circle cx="512.0" cy="314.8" r="4.5" fill="none" stroke="#4fd1e0" stroke-width="1.2"/><line x1="504.0" y1="314.8" x2="520.0" y2="314.8" stroke="#4fd1e0" stroke-width="1"/><line x1="512.0" y1="306.8" x2="512.0" y2="322.8" stroke="#4fd1e0" stroke-width="1"/><text class="dt" x="525.0" y="305.8" fill="#4fd1e0">ORİJİN · KÖK c/4</text>
+</svg>
+    </div>
+
+    <div class="cards rv" style="margin-top:22px">
+      <div class="card">
+        <span class="card-ix">KONFİGÜRASYON</span>
+        <h3>Çift kuyruk kirişi + itici pervane</h3>
+        <p>Pervane gövdenin arkasında; burun bölümü kamera ve sensör için tamamen serbest.
+           İki karbon kiriş kuyruk takımını taşır, kirişler arası 480 mm.</p>
+      </div>
+      <div class="card">
+        <span class="card-ix">KANAT</span>
+        <h3>Trapez planform, AR ≈ 7.5</h3>
+        <p>Kök veter 319.8 mm, uç veter 240.0 mm. Referans alan 0.588 m².
+           Kanatçıklar yarı-açıklığın %54–89 aralığında.</p>
+      </div>
+      <div class="card">
+        <span class="card-ix">KUYRUK</span>
+        <h3>Yatay 700 mm · dikey 2 × 180 mm</h3>
+        <p>Yatay kuyruk iki kirişin arasına oturur; elevatör 644 mm açıklığında.
+           Çift dikey kuyruk kiriş uçlarında.</p>
+      </div>
+      <div class="card">
+        <span class="card-ix">GÖVDE</span>
+        <h3>800 × 141.6 × 151.2 mm</h3>
+        <p>Aviyonik güverte, batarya ve güç sistemi gövde içinde. Üst kapak servis
+           erişimi için ayrılabilir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== AVİYONİK ====================== -->
+<section class="section" id="aviyonik">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">02 — Aviyonik</div>
+      <h2>Gerçek donanım, resmî CAD ile modellendi</h2>
+      <p>Aviyonik bölmesindeki her bileşen üreticinin yayımladığı CAD veya mekanik
+         çizimden modele alındı. Yaklaşık kutu çizilmedi.</p>
+    </div>
+
+    <div class="hw rv">
+      <div class="hw-row">
+        <div class="hw-name">Holybro Pixhawk 6C<small>UÇUŞ KONTROLCÜSÜ</small></div>
+        <div class="hw-val">84.0 × 44.0 × 12.4 <b>mm</b></div>
+        <div class="hw-val">59.3 <b>g</b> <span class="mute">(datasheet)</span></div>
+        <div><span class="badge b-ok">Resmî CAD</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">Raspberry Pi 5 · 4 GB<small>GÖREV BİLGİSAYARI</small></div>
+        <div class="hw-val">85 × 56 <b>mm</b> kart</div>
+        <div class="hw-val">kütle <span class="mute">ölçülecek</span></div>
+        <div><span class="badge b-ok">Resmî CAD</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">RPi 5 Active Cooler<small>AKTİF SOĞUTMA</small></div>
+        <div class="hw-val">63.5 × 42.5 × 13.7 <b>mm</b></div>
+        <div class="hw-val">fan 30 × 30 <b>mm</b></div>
+        <div><span class="badge b-wait">Çizim türevi</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">Holybro Standard M8N<small>GNSS + PUSULA</small></div>
+        <div class="hw-val">Ø50.0 × 14.3 <b>mm</b></div>
+        <div class="hw-val">32.0 <b>g</b> <span class="mute">(datasheet)</span></div>
+        <div><span class="badge b-wait">Revizyon teyidi</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">Holybro PM02<small>GÜÇ MODÜLÜ · AKIM/GERİLİM</small></div>
+        <div class="hw-val">fiziksel ölçüm bekliyor</div>
+        <div class="hw-val">—</div>
+        <div><span class="badge b-block">CAD yayımlanmamış</span></div>
+      </div>
+    </div>
+
+    <div class="note rv" style="margin-top:20px">
+      <b>Neden bazı satırlar boş</b>
+      Üretici bir ölçüyü yayımlamamışsa buraya tahmin yazmıyoruz. PM02'nin analog
+      sürümünün resmî CAD'i yayımlanmadığı için mount tasarımı hiç başlatılmadı;
+      tüm kotlar fiziksel ölçümden gelecek. Bu, projenin temel kuralı:
+      <em>ölçülmeyen bilinmez.</em>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== OTONOMİ ====================== -->
+<section class="section" id="otonomi">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">03 — Otonomi & Yazılım</div>
+      <h2>Uçuştan yer istasyonuna tek zincir</h2>
+      <p>Görev bilgisayarından yer istasyonuna kadar bütün katmanlar aynı şema
+         sözleşmesini paylaşır; her katman simülasyonda uçtan uca test edilebilir.</p>
+    </div>
+
+    <div class="stack rv">
+      <div class="stack-i"><h4>companion-agent</h4>
+        <p>Görev bilgisayarında çalışan otonomi ajanı. MAVLink adaptörleri, görü hattı
+           ve yarışma protokolü paketleme.</p></div>
+      <div class="stack-i"><h4>vision-core</h4>
+        <p>OpenCV tabanlı hedef tespit çekirdeği; preset sistemi, hata ayıklama çıktıları
+           ve tekrarlanabilir değerlendirme.</p></div>
+      <div class="stack-i"><h4>mavlink-core</h4>
+        <p>Telemetri ve komut katmanı. Gerçek uçuş kontrolcüsüne bağlanmadan önce
+           sahte ve SITL adaptörleriyle doğrulanır.</p></div>
+      <div class="stack-i"><h4>mission-core</h4>
+        <p>Görev durum makinesi: kalkış, seyir, hedef arama, kilitlenme ve iniş
+           fazlarının kurallı geçişleri.</p></div>
+      <div class="stack-i"><h4>safety-core</h4>
+        <p>Emniyet sınırları ve kesme kuralları. Testlerle korunan, atlanamayan
+           güvenlik kapıları.</p></div>
+      <div class="stack-i"><h4>telemetry-api</h4>
+        <p>FastAPI servisi; canlı telemetri, oturum kaydı ve kayıttan yeniden oynatma.</p></div>
+      <div class="stack-i"><h4>ground-station</h4>
+        <p>Next.js yer istasyonu arayüzü: telemetri panosu, hedef durumu ve
+           uçuş geçmişi.</p></div>
+      <div class="stack-i"><h4>sitl-runner</h4>
+        <p>Donanımsız uçuş simülasyonu. Yazılım, uçak hazır olmadan önce
+           binlerce kez uçurulabilir.</p></div>
+      <div class="stack-i"><h4>dataset-tools</h4>
+        <p>Görü veri seti yönetimi, etiket doğrulama, tespit değerlendirmesi ve
+           parametre taraması.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MÜHENDİSLİK ====================== -->
+<section class="section" id="muhendislik">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">04 — Mühendislik Disiplini</div>
+      <h2>Bu projeyi ayıran şey: hiçbir sayı uydurulmadı</h2>
+      <p>Uçağın dijital ikizindeki her bileşen bir <em>güven seviyesi</em> taşır.
+         Bir ölçü nereden geldiği bilinmiyorsa, o ölçü modele girmez.</p>
+    </div>
+
+    <div class="cards rv" style="margin-bottom:26px">
+      <div class="card"><span class="card-ix">DOĞRULAMA</span>
+        <h3>0.0000 mm³</h3>
+        <p>Aviyonik güverte ile Pixhawk, Raspberry Pi ve soğutucu arasında beklenmeyen
+           çakışma. Fusion <span class="mono">analyzeInterference</span> ile ölçüldü.</p></div>
+      <div class="card"><span class="card-ix">REGRESYON</span>
+        <h3>39 test</h3>
+        <p>Geometri sözleşmeleri, blocker durumları ve dış siluet otomatik testlerle
+           korunuyor. Sessiz sapma mümkün değil.</p></div>
+      <div class="card"><span class="card-ix">İZLENEBİLİRLİK</span>
+        <h3>90 bileşen</h3>
+        <p>Dijital ikizdeki her bileşen otorite etiketli. Etiketsiz gövdeli bileşen
+           sayısı: sıfır.</p></div>
+      <div class="card"><span class="card-ix">MONTAJ</span>
+        <h3>8/8 hizalama</h3>
+        <p>Güverte bağlantı delikleri, mount desenleriyle geometrik olarak
+           doğrulandı — göz kararı değil.</p></div>
+    </div>
+
+    <div class="cards rv" style="grid-template-columns:1fr;gap:26px">
+      <div class="card" style="padding:28px">
+        <span class="card-ix">DİJİTAL İKİZ · OTORİTE DAĞILIMI</span>
+        <h3 style="margin-bottom:20px">Modelin neresine ne kadar güveniyoruz</h3>
+        <div class="auth">
+          <div class="auth-row"><span class="auth-k">OFFICIAL_CAD</span>
+            <span class="auth-bar"><i data-w="9" style="background:#4ade80"></i></span><span class="auth-n">8</span></div>
+          <div class="auth-row"><span class="auth-k">OFFICIAL_DRAWING_DERIVED</span>
+            <span class="auth-bar"><i data-w="4.5" style="background:#4fd1e0"></i></span><span class="auth-n">4</span></div>
+          <div class="auth-row"><span class="auth-k">PLANNING_ENVELOPE_ONLY</span>
+            <span class="auth-bar"><i data-w="55" style="background:#f2a63b"></i></span><span class="auth-n">50</span></div>
+          <div class="auth-row"><span class="auth-k">PLACEHOLDER</span>
+            <span class="auth-bar"><i data-w="31" style="background:#64718a"></i></span><span class="auth-n">28</span></div>
+          <div class="auth-row"><span class="auth-k">PHYSICAL_MEASUREMENT_VERIFIED</span>
+            <span class="auth-bar"><i data-w="0.6" style="background:#f2555a"></i></span><span class="auth-n">0</span></div>
+        </div>
+        <p style="margin-top:20px;color:var(--text-dim);font-size:14.5px">
+          Bu tablo bilinçli olarak dürüst: modelin büyük kısmı hâlâ <em>planlama zarfı</em>
+          seviyesinde ve <strong>henüz hiçbir parça fiziksel ölçümle doğrulanmadı</strong>.
+          Donanım elimize geçtikçe bu satırlar yukarı taşınacak.
+        </p>
+      </div>
+    </div>
+
+    <div class="cards rv" style="margin-top:26px">
+      <div class="card"><span class="card-ix">KAPI · G3</span>
+        <h3>Çakışma <span class="badge b-ok" style="font-size:9px">PASS</span></h3>
+        <p>Aviyonik yerleşimi çakışmasız. Üretici CAD'inin kendi iç örtüşmeleri ayrı
+           sınıflandırılır, bize atfedilmez.</p></div>
+      <div class="card"><span class="card-ix">KAPI · G7</span>
+        <h3>Yapısal yük <span class="badge b-block" style="font-size:9px">BLOCKED</span></h3>
+        <p>Uçuş yük senaryosu dondurulmadı. Dolayısıyla hiçbir parça için mukavemet
+           iddiasında bulunulmuyor.</p></div>
+      <div class="card"><span class="card-ix">KAPI · KÜTLE</span>
+        <h3>CG <span class="badge b-wait" style="font-size:9px">UNRESOLVED</span></h3>
+        <p>Kütle bütçesi kapsaması %5.9. Motor ve batarya seçilmeden ağırlık merkezi
+           hesaplanmaz — tahmini değerle sahte CG üretilmez.</p></div>
+      <div class="card"><span class="card-ix">KAPI · İÇ HACİM</span>
+        <h3>Gövde içi <span class="badge b-wait" style="font-size:9px">PENDING</span></h3>
+        <p>Gerçek kabuk kalınlığı dondurulmadığı için kullanılabilir iç hacim
+           bilinmiyor; keyfi bir kalınlık varsayılmadı.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ÜRETİM ====================== -->
+<section class="section" id="uretim">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">05 — Üretim</div>
+      <h2>Parametrik tasarlanan 3D baskı arayüzleri</h2>
+      <p>Aviyonik montaj parçalarının hiçbiri elle çizilmedi; hepsi resmî donanım
+         ölçülerinden türeyen parametrik kaynaktan üretiliyor.</p>
+    </div>
+
+    <div class="hw rv">
+      <div class="hw-row">
+        <div class="hw-name">PB-AF01 · Aviyonik Güverte<small>PIXHAWK + RPi TAŞIYICI ARAYÜZ</small></div>
+        <div class="hw-val">191 × 77 × 8 <b>mm</b></div>
+        <div class="hw-val">37.26 <b>cm³</b></div>
+        <div><span class="badge b-info">Digital fit</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">PB-P01 · Pixhawk Yuvası<small>AÇIK UÇLU KAVRAMA KANALI</small></div>
+        <div class="hw-val">84.4 × 73.3 × 9.0 <b>mm</b></div>
+        <div class="hw-val">kanal 44.50 <b>mm</b></div>
+        <div><span class="badge b-info">Baskı denemesi</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">PB-P02 · RPi5 + Soğutucu Taşıyıcı<small>RESMÎ 58 × 49 DELİK DESENİ</small></div>
+        <div class="hw-val">72 × 56 × 7 <b>mm</b></div>
+        <div class="hw-val">4 × M2.5</div>
+        <div><span class="badge b-info">Baskı denemesi</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">PB-P03A / P03B · GNSS Tutucu + Mast<small>M8N PUCK ARAYÜZÜ</small></div>
+        <div class="hw-val">Ø50.5 iç çap</div>
+        <div class="hw-val">D-key anti-rotasyon</div>
+        <div><span class="badge b-wait">Donanım revizyonu</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">PB-CAL-001 · Kalibrasyon Kuponu<small>TOLERANS VERİSİNİN KAYNAĞI</small></div>
+        <div class="hw-val">121 × 78 × 13 <b>mm</b></div>
+        <div class="hw-val">35 ölçüm noktası</div>
+        <div><span class="badge b-wait">Baskı bekliyor</span></div>
+      </div>
+    </div>
+
+    <div class="gal rv" style="margin-top:24px">
+      <figure><img src="assets/img/S34_DECK_ONLY.png" alt="PB-AF01 aviyonik güverte" loading="lazy" width="1600" height="1000">
+        <figcaption>PB-AF01 · pad, kaburga, kablo geçişi ve strap slotları</figcaption></figure>
+      <figure><img src="assets/img/S34A_VIEW_ENGINEERING_REALITY.png" alt="Aviyonik bölmesi gerçek donanımla" loading="lazy" width="1600" height="1000">
+        <figcaption>Aviyonik bölmesi · gerçek Pixhawk ve Raspberry Pi geometrileriyle</figcaption></figure>
+      <figure><img src="assets/img/S34_PIXHAWK_ACCESS.png" alt="Pixhawk servis erişimi" loading="lazy" width="1600" height="1000">
+        <figcaption>Servis zarfları · konnektör ve söküm yolu doğrulaması</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== DURUM ====================== -->
+<section class="section" id="durum">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">06 — Durum & Yol Haritası</div>
+      <h2>Nerede olduğumuzu olduğu gibi yazıyoruz</h2>
+      <p>Tamamlanan işi de, önümüzdeki engelleri de aynı netlikte listeliyoruz.</p>
+    </div>
+
+    <div class="tl rv">
+      <div class="tl-i done"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Hava aracı geometrisi donduruldu</b><span>TAMAMLANDI</span></div>
+        <p>candidate_003 baseline; dış ölçüler SHA kilidiyle regresyon altında.</p></div></div>
+      <div class="tl-i done"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Resmî donanım CAD'leri entegre edildi</b><span>TAMAMLANDI</span></div>
+        <p>Pixhawk 6C, Raspberry Pi 5, Active Cooler ve M8N üretici kaynaklarından modele alındı.</p></div></div>
+      <div class="tl-i done"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Aviyonik bölmesi gerçek donanıma göre yeniden tasarlandı</b><span>TAMAMLANDI</span></div>
+        <p>PB-AF01 güvertesi; beklenmeyen çakışma sıfır, servis ve söküm yolları açık.</p></div></div>
+      <div class="tl-i done"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Geometri güven kapısı</b><span>TAMAMLANDI</span></div>
+        <p>Soğutucu yerleşim hatası tespit edilip düzeltildi; gövde placeholder semantiği ayrıştırıldı.</p></div></div>
+      <div class="tl-i now"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Yazıcı kalibrasyonu ve fiziksel ölçüm</b><span>SIRADA</span></div>
+        <p>PB-CAL-001 kuponu basılacak; gerçek tolerans eğrisi çıkarılacak. Eldeki donanım
+           kumpasla ölçülüp modele işlenecek.</p></div></div>
+      <div class="tl-i"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Tahrik ve enerji seçimi</b><span>PLANLANDI</span></div>
+        <p>Motor, ESC, pervane ve batarya seçimi. Bu kararlar kütle bütçesini ve
+           ağırlık merkezini açacak.</p></div></div>
+      <div class="tl-i"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Yapısal doğrulama ve aerodinamik analiz</b><span>PLANLANDI</span></div>
+        <p>Uçuş yük senaryosu donduktan sonra mukavemet ve kanat yüklemesi analizleri.</p></div></div>
+      <div class="tl-i"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Yer testleri ve uçuş</b><span>PLANLANDI</span></div>
+        <p>Pervane sökülü tezgâh testleri, ardından kademeli uçuş programı.</p></div></div>
+    </div>
+
+    <div class="note rv" style="margin-top:32px">
+      <b>Dürüstlük notu</b>
+      Bu hava aracı henüz uçmadı ve hiçbir parçası uçuşa hazır olarak
+      işaretlenmemiştir. Yukarıdaki bütün doğrulamalar <em>dijital</em> doğrulamalardır.
+      Fiziksel testler tamamlanmadan hiçbir statü yükseltilmeyecek.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="brand" href="#top"><span class="dot"></span>ESCO<span style="color:var(--accent)">-UAV</span> <small>SAVAŞAN İHA</small></a>
+      <p>Otonom sabit kanat İHA geliştirme takımı. Ölçülmeyen hiçbir değeri
+         gerçek kabul etmeyen bir mühendislik kültürüyle çalışıyoruz.</p>
+    </div>
+    <div class="foot-meta">
+      PLATFORM B · CANDIDATE_003<br>
+      KANAT AÇIKLIĞI 2100.0 MM<br>
+      DİJİTAL İKİZ · FUSION PB-V5<br>
+      <span style="color:#4fd1e0">DURUM: DİJİTAL FİT DOĞRULANDI</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  import { initViewer } from './assets/js/viewer.js';
+  initViewer({ host:'#viewer', model:'assets/models/esco-uav.glb',
+               loader:'#vload', bar:'#vbar', hint:'#vhint' });
+</script>
+<script>
+  /* görünüme girince belirme + otorite barları */
+  const io = new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.auth-bar i').forEach(b=>{ b.style.width = b.dataset.w+'%'; });
+      io.unobserve(e.target);
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
