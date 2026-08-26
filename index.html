@@ -52,7 +52,7 @@
       <h1><span class="pre">ESCO</span>EST-34<span class="thin">Çift kuyruk kirişli, itici pervaneli otonom görev platformu</span></h1>
       <p class="hero-lede">
         2100 mm kanat açıklığı. Aşağıdaki model uçağın tam montajı: gövde, aviyonik
-        güverte, baskı parçaları ve gerçek Pixhawk / Raspberry Pi / GNSS donanımı —
+        güverte, baskı parçaları ve resmî CAD'den alınan gerçek donanım geometrisi —
         hepsi dijital ikizdeki gerçek istasyonlarında. Tahmin edilen tek bir kot yok.
       </p>
       <div class="hero-tags">
@@ -184,15 +184,33 @@
          çizimden modele alındı. Yaklaşık kutu çizilmedi.</p>
     </div>
 
+    <div class="note rv" style="margin-bottom:22px">
+      <b>Planlanan aviyonik platformu: T3-GEM-O1</b>
+      ESCO EST-34'ün birincil aviyonik platformu olarak yerli <b>T3-GEM-O1</b>
+      seçildi: uçuş kontrolü, görev bilgisayarı ve yapay zekâ hızlandırma tek
+      kart üzerinde (TI AM67A · 4×Cortex-A53 · 4 TOPS · ArduPilot Linux desteği
+      upstream'de mevcut). <b>Kart henüz elimizde değil.</b> Mekanik çizimi
+      yayımlanmadığı için hiçbir montaj parçası tasarlanmadı ve hiçbir ölçüm
+      doğrulanmadı. Statü: <em>mimari seçildi, mühendislik entegrasyonu bekliyor.</em>
+      Aşağıdaki donanım ve tüm CAD görselleri, doğrulanmış önceki mimariye
+      (Pixhawk 6C + Raspberry Pi 5) aittir ve geri dönüş seçeneği olarak korunuyor.
+    </div>
+
     <div class="hw rv">
       <div class="hw-row">
-        <div class="hw-name">Holybro Pixhawk 6C<small>UÇUŞ KONTROLCÜSÜ</small></div>
+        <div class="hw-name">T3-GEM-O1<small>PLANLANAN BİRLEŞİK UÇUŞ + GÖREV + YZ</small></div>
+        <div class="hw-val">ölçüler <span class="mute">yayımlanmadı</span></div>
+        <div class="hw-val">kütle <span class="mute">yayımlanmadı</span></div>
+        <div><span class="badge b-block">Elde değil</span></div>
+      </div>
+      <div class="hw-row">
+        <div class="hw-name">Holybro Pixhawk 6C<small>ÖNCEKİ MİMARİ · UÇUŞ KONTROLCÜSÜ</small></div>
         <div class="hw-val">84.0 × 44.0 × 12.4 <b>mm</b></div>
         <div class="hw-val">59.3 <b>g</b> <span class="mute">(datasheet)</span></div>
         <div><span class="badge b-ok">Resmî CAD</span></div>
       </div>
       <div class="hw-row">
-        <div class="hw-name">Raspberry Pi 5 · 4 GB<small>GÖREV BİLGİSAYARI</small></div>
+        <div class="hw-name">Raspberry Pi 5 · 4 GB<small>ÖNCEKİ MİMARİ · GÖREV BİLGİSAYARI</small></div>
         <div class="hw-val">85 × 56 <b>mm</b> kart</div>
         <div class="hw-val">kütle <span class="mute">ölçülecek</span></div>
         <div><span class="badge b-ok">Resmî CAD</span></div>
@@ -221,7 +239,9 @@
       <b>Neden bazı satırlar boş</b>
       Üretici bir ölçüyü yayımlamamışsa buraya tahmin yazmıyoruz. PM02'nin analog
       sürümünün resmî CAD'i yayımlanmadığı için mount tasarımı hiç başlatılmadı;
-      tüm kotlar fiziksel ölçümden gelecek. Bu, projenin temel kuralı:
+      tüm kotlar fiziksel ölçümden gelecek. Aynı kural T3-GEM-O1 için de
+      geçerli: kartın mekanik çizimi yayımlanmadığı ve kart elimizde olmadığı
+      için tek bir montaj parçası bile çizilmedi. Bu, projenin temel kuralı:
       <em>ölçülmeyen bilinmez.</em>
     </div>
   </div>
@@ -349,7 +369,9 @@
       <div class="eyebrow">05 — Üretim</div>
       <h2>Parametrik tasarlanan 3D baskı arayüzleri</h2>
       <p>Aviyonik montaj parçalarının hiçbiri elle çizilmedi; hepsi resmî donanım
-         ölçülerinden türeyen parametrik kaynaktan üretiliyor.</p>
+         ölçülerinden türeyen parametrik kaynaktan üretiliyor. Aşağıdaki parçalar
+         önceki mimariye (Pixhawk 6C + Raspberry Pi 5) aittir; T3-GEM-O1 için
+         mekanik veri yayımlanana kadar yeni parça tasarlanmayacak.</p>
     </div>
 
     <div class="hw rv">
@@ -389,7 +411,7 @@
       <figure><img src="assets/img/S34_DECK_ONLY.png?v=5dcba9eb49" alt="PB-AF01 aviyonik güverte" loading="lazy" width="1600" height="1000">
         <figcaption>PB-AF01 · pad, kaburga, kablo geçişi ve strap slotları</figcaption></figure>
       <figure><img src="assets/img/S34A_VIEW_ENGINEERING_REALITY.png?v=9a6f41c9e9" alt="Aviyonik bölmesi gerçek donanımla" loading="lazy" width="1600" height="1000">
-        <figcaption>Aviyonik bölmesi · gerçek Pixhawk ve Raspberry Pi geometrileriyle</figcaption></figure>
+        <figcaption>Aviyonik bölmesi · resmî Pixhawk ve Raspberry Pi CAD geometrileriyle (önceki mimari)</figcaption></figure>
       <figure><img src="assets/img/S34_PIXHAWK_ACCESS.png?v=7c563cb790" alt="Pixhawk servis erişimi" loading="lazy" width="1600" height="1000">
         <figcaption>Servis zarfları · konnektör ve söküm yolu doğrulaması</figcaption></figure>
     </div>
@@ -419,6 +441,12 @@
         <div class="tl-h"><b>Geometri güven kapısı</b><span>TAMAMLANDI</span></div>
         <p>Soğutucu yerleşim hatası tespit edilip düzeltildi; gövde placeholder semantiği ayrıştırıldı.</p></div></div>
       <div class="tl-i now"><span class="tl-dot"></span><div>
+        <div class="tl-h"><b>Aviyonik mimarisi T3-GEM-O1'e taşındı</b><span>DEVAM EDİYOR</span></div>
+        <p>Yerli birleşik uçuş + görev + yapay zekâ platformu seçildi. Önceki mimari
+           silinmedi; geri dönüş seçeneği olarak tüm kaynakları ve testleriyle korunuyor.
+           Kart elde değil, mekanik çizimi yayımlanmadı — bu yüzden 9 açık blocker var
+           ve tek bir yeni montaj parçası çizilmedi.</p></div></div>
+      <div class="tl-i"><span class="tl-dot"></span><div>
         <div class="tl-h"><b>Yazıcı kalibrasyonu ve fiziksel ölçüm</b><span>SIRADA</span></div>
         <p>PB-CAL-001 kuponu basılacak; gerçek tolerans eğrisi çıkarılacak. Eldeki donanım
            kumpasla ölçülüp modele işlenecek.</p></div></div>
@@ -438,7 +466,10 @@
       <b>Dürüstlük notu</b>
       Bu hava aracı henüz uçmadı ve hiçbir parçası uçuşa hazır olarak
       işaretlenmemiştir. Yukarıdaki bütün doğrulamalar <em>dijital</em> doğrulamalardır.
-      Fiziksel testler tamamlanmadan hiçbir statü yükseltilmeyecek.
+      Fiziksel testler tamamlanmadan hiçbir statü yükseltilmeyecek. Yeni aviyonik
+      platformu <em>seçildi</em>, doğrulanmadı: kart elde değil, hiçbir tezgâh testi
+      yapılmadı, uçuş kontrolü ile görev bilgisayarının aynı yongada birleşmesinin
+      getirdiği ortak-mod arıza riski açık bir mühendislik maddesi olarak duruyor.
     </div>
   </div>
 </section>
