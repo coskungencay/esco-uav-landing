@@ -62,7 +62,13 @@ export function initViewer(opts){
 
   const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true, powerPreference:'high-performance'});
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.setSize(host.clientWidth, host.clientHeight);
+  const sizeOf = ()=>{                       /* yerleşim hazır değilse makul yedek */
+    const r = host.getBoundingClientRect();
+    const w = Math.round(r.width)  || host.clientWidth  || host.offsetWidth  || 960;
+    const h = Math.round(r.height) || host.clientHeight || host.offsetHeight || 540;
+    return [w, h];
+  };
+  { const [w,h] = sizeOf(); renderer.setSize(w, h); }
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 0.96;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -72,7 +78,7 @@ export function initViewer(opts){
   const pmrem  = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 
-  const camera = new THREE.PerspectiveCamera(34, host.clientWidth/host.clientHeight, 1, 30000);
+  const camera = new THREE.PerspectiveCamera(34, sizeOf()[0]/sizeOf()[1], 1, 30000);
 
   scene.add(new THREE.AmbientLight(0x8fa4c4, 0.16));
   const key  = new THREE.DirectionalLight(0xfff4e6, 3.0); key.position.set( 900, 1400,  700);
@@ -308,10 +314,14 @@ export function initViewer(opts){
   })();
   window.__escoStop = ()=>{ running = false; controls.update(); renderer.render(scene,camera); };
 
-  addEventListener('resize', ()=>{
-    const w = host.clientWidth, h = host.clientHeight;
+  function onResize(){
+    const [w,h] = sizeOf();
     if(!w || !h) return;
+    if(renderer.domElement.width === w && renderer.domElement.height === h) return;
     camera.aspect = w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h);
-    refit(); controls.update();
-  });
+    if(ready){ refit(); controls.update(); }
+  }
+  addEventListener('resize', onResize);
+  if(window.ResizeObserver) new ResizeObserver(onResize).observe(host);
+  requestAnimationFrame(onResize);            /* ilk yerleşimden sonra bir kez daha */
 }
