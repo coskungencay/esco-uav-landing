@@ -1,0 +1,680 @@
+{
+  "revision": "R13",
+  "cad_bodies": 140,
+  "display_meshes": 134,
+  "source_step_sha256": "8753ba9b366a68e1e1d3abe1d5551d0c0d158a573d5b491935812a2321fb0bec",
+  "units": "metres",
+  "axes": "CAD Y,Z,X mapped to web X,Y,Z",
+  "meshes": [
+    {
+      "name": "wing_starboard",
+      "layer": "outer",
+      "triangles": 236
+    },
+    {
+      "name": "wing_port",
+      "layer": "outer",
+      "triangles": 236
+    },
+    {
+      "name": "htail_starboard",
+      "layer": "outer",
+      "triangles": 476
+    },
+    {
+      "name": "htail_port",
+      "layer": "outer",
+      "triangles": 476
+    },
+    {
+      "name": "vtail_port",
+      "layer": "outer",
+      "triangles": 476
+    },
+    {
+      "name": "vtail_starboard",
+      "layer": "outer",
+      "triangles": 476
+    },
+    {
+      "name": "boom_port",
+      "layer": "outer",
+      "triangles": 464
+    },
+    {
+      "name": "boom_starboard",
+      "layer": "outer",
+      "triangles": 464
+    },
+    {
+      "name": "boom_clamp_port",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "boom_clamp_starboard",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "elevator",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "rudder_port",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "rudder_starboard",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "aileron_port",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "aileron_starboard",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "spar_cap_upper_starboard",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "spar_cap_lower_starboard",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "spar_cap_upper_port",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "spar_cap_lower_port",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "wing_joiner_tube",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "rib_port_02",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_port_03",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_port_04",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_port_05",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_port_06",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_port_07",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_port_08",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_port_09",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_port_10",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_port_11",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_starboard_02",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_starboard_03",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_starboard_04",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_starboard_05",
+      "layer": "structure",
+      "triangles": 1436
+    },
+    {
+      "name": "rib_starboard_06",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_starboard_07",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_starboard_08",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_starboard_09",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_starboard_10",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "rib_starboard_11",
+      "layer": "structure",
+      "triangles": 1432
+    },
+    {
+      "name": "shear_web_port_02",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_03",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_04",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_05",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_06",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_07",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_08",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_09",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_port_10",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_02",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_03",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_04",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_05",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_06",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_07",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_08",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_09",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_10",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "pod_hardpoint_plate_aft",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "pod_frame_F1_motor",
+      "layer": "structure",
+      "triangles": 1150
+    },
+    {
+      "name": "pod_frame_F2_hardpoint_aft",
+      "layer": "structure",
+      "triangles": 516
+    },
+    {
+      "name": "pod_frame_F3_battery_aft",
+      "layer": "structure",
+      "triangles": 552
+    },
+    {
+      "name": "pod_frame_F4_hardpoint_fwd",
+      "layer": "structure",
+      "triangles": 576
+    },
+    {
+      "name": "pod_frame_F5_camera",
+      "layer": "structure",
+      "triangles": 296
+    },
+    {
+      "name": "ventral_skid",
+      "layer": "outer",
+      "triangles": 76
+    },
+    {
+      "name": "motor_mount_plate",
+      "layer": "structure",
+      "triangles": 228
+    },
+    {
+      "name": "motor_zone",
+      "layer": "outer",
+      "triangles": 228
+    },
+    {
+      "name": "hatch_frame",
+      "layer": "structure",
+      "triangles": 32
+    },
+    {
+      "name": "hatch_cover",
+      "layer": "outer",
+      "triangles": 12
+    },
+    {
+      "name": "breaker_fuse_panel",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "battery_rail_port",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "battery_rail_starboard",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "electronics_tray",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "camera_bracket",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "camera_aperture_ring",
+      "layer": "outer",
+      "triangles": 464
+    },
+    {
+      "name": "joiner_carrier_port",
+      "layer": "structure",
+      "triangles": 1842
+    },
+    {
+      "name": "joiner_carrier_starboard",
+      "layer": "structure",
+      "triangles": 1842
+    },
+    {
+      "name": "rib_port_00_aft",
+      "layer": "structure",
+      "triangles": 1016
+    },
+    {
+      "name": "rib_port_00_forward",
+      "layer": "structure",
+      "triangles": 316
+    },
+    {
+      "name": "rib_port_01_aft",
+      "layer": "structure",
+      "triangles": 992
+    },
+    {
+      "name": "rib_port_01_forward",
+      "layer": "structure",
+      "triangles": 316
+    },
+    {
+      "name": "rib_starboard_00_aft",
+      "layer": "structure",
+      "triangles": 1016
+    },
+    {
+      "name": "rib_starboard_00_forward",
+      "layer": "structure",
+      "triangles": 316
+    },
+    {
+      "name": "rib_starboard_01_aft",
+      "layer": "structure",
+      "triangles": 992
+    },
+    {
+      "name": "rib_starboard_01_forward",
+      "layer": "structure",
+      "triangles": 316
+    },
+    {
+      "name": "shear_web_port_01_outboard",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "shear_web_starboard_01_outboard",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "pod_dock_rail_starboard",
+      "layer": "structure",
+      "triangles": 588
+    },
+    {
+      "name": "wing_dock_aft_starboard",
+      "layer": "structure",
+      "triangles": 776
+    },
+    {
+      "name": "bolt_envelope_aft_starboard",
+      "layer": "structure",
+      "triangles": 484
+    },
+    {
+      "name": "washer_envelope_aft_starboard",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "nut_envelope_aft_starboard",
+      "layer": "structure",
+      "triangles": 256
+    },
+    {
+      "name": "wing_dock_fwd_starboard",
+      "layer": "structure",
+      "triangles": 808
+    },
+    {
+      "name": "bolt_envelope_fwd_starboard",
+      "layer": "structure",
+      "triangles": 484
+    },
+    {
+      "name": "washer_envelope_fwd_starboard",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "nut_envelope_fwd_starboard",
+      "layer": "structure",
+      "triangles": 256
+    },
+    {
+      "name": "pod_dock_rail_port",
+      "layer": "structure",
+      "triangles": 588
+    },
+    {
+      "name": "wing_dock_aft_port",
+      "layer": "structure",
+      "triangles": 776
+    },
+    {
+      "name": "bolt_envelope_aft_port",
+      "layer": "structure",
+      "triangles": 484
+    },
+    {
+      "name": "washer_envelope_aft_port",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "nut_envelope_aft_port",
+      "layer": "structure",
+      "triangles": 256
+    },
+    {
+      "name": "wing_dock_fwd_port",
+      "layer": "structure",
+      "triangles": 808
+    },
+    {
+      "name": "bolt_envelope_fwd_port",
+      "layer": "structure",
+      "triangles": 484
+    },
+    {
+      "name": "washer_envelope_fwd_port",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "nut_envelope_fwd_port",
+      "layer": "structure",
+      "triangles": 256
+    },
+    {
+      "name": "top_washer_aft_starboard",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "top_washer_fwd_starboard",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "top_washer_aft_port",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "top_washer_fwd_port",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "stop_foot_aft",
+      "layer": "structure",
+      "triangles": 484
+    },
+    {
+      "name": "stop_wall_aft",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "stop_gusset_aft_0",
+      "layer": "structure",
+      "triangles": 8
+    },
+    {
+      "name": "stop_gusset_aft_1",
+      "layer": "structure",
+      "triangles": 8
+    },
+    {
+      "name": "end_pad_aft",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "hardpoint_plate_fwd_drilled_candidate",
+      "layer": "structure",
+      "triangles": 484
+    },
+    {
+      "name": "clamp_spacer_-20",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "clamp_spacer_20",
+      "layer": "structure",
+      "triangles": 464
+    },
+    {
+      "name": "stop_foot_forward",
+      "layer": "structure",
+      "triangles": 484
+    },
+    {
+      "name": "stop_wall_forward",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "stop_gusset_forward_0",
+      "layer": "structure",
+      "triangles": 8
+    },
+    {
+      "name": "stop_gusset_forward_1",
+      "layer": "structure",
+      "triangles": 8
+    },
+    {
+      "name": "end_pad_forward",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "tray_drilled_candidate",
+      "layer": "structure",
+      "triangles": 956
+    },
+    {
+      "name": "strap_envelope_1",
+      "layer": "structure",
+      "triangles": 272
+    },
+    {
+      "name": "top_spreader_pad_1",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "strap_envelope_2",
+      "layer": "structure",
+      "triangles": 272
+    },
+    {
+      "name": "top_spreader_pad_2",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "floor_pad",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "side_spacer_port",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "side_pad_port",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "side_spacer_starboard",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "side_pad_starboard",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "battery_reference",
+      "layer": "structure",
+      "triangles": 12
+    },
+    {
+      "name": "pod_shell_candidate",
+      "layer": "outer",
+      "triangles": 5556
+    }
+  ]
+}

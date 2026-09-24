@@ -1,0 +1,103 @@
+---
+import '@fontsource-variable/manrope';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+import data from '../data/project.json';
+const milestones=[
+ ['01','Dijital tasarım','R13','Tam uçak geometrisi, gerçek kabuk adayı ve güncellenen batarya tutucusu aynı montajda.','complete'],
+ ['02','Donanım & entegrasyon','Devam ediyor','Motor, ESC, servolar ve güç elektroniği teslim alındı. Ölçüm ve tezgâh doğrulaması sırada.','current'],
+ ['03','Fiziksel doğrulama','Sıradaki adım','Malzeme kuponları, bağlantı yükleri, güç hattı ve gerçek kütle–denge ölçümleri.','next'],
+ ['04','Uçuş & görev','2027 hedefi','Kademeli uçuş testleri ve yarışma görevleri için sistemin birlikte doğrulanması.','next']
+];
+---
+<!doctype html>
+<html lang="tr">
+<head>
+ <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+ <meta name="theme-color" content="#eeeee7"/>
+ <title>ESCO-UAV — Mühendislikten gökyüzüne.</title>
+ <meta name="description" content="ESCO EST-34. TEKNOFEST 2027 Savaşan İHA için geliştirilen otonom sabit kanat platformu. Güncel R13 tasarımı, 3B model ve mühendislik yolculuğu."/>
+ <link rel="canonical" href="https://esco-uav.space/"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+ <meta property="og:type" content="website"/><meta property="og:locale" content="tr_TR"/>
+ <meta property="og:title" content="ESCO-UAV — Mühendislikten gökyüzüne."/>
+ <meta property="og:description" content="2027’ye doğru. ESCO EST-34’ün yeni R13 tasarımını keşfedin."/>
+ <meta property="og:url" content="https://esco-uav.space/"/><meta property="og:image" content="https://esco-uav.space/images/og-r13.jpg"/>
+ <meta name="twitter:card" content="summary_large_image"/>
+ <link rel="preload" as="image" href="/images/est34-r13.webp"/>
+ <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'ESCO-UAV',url:'https://esco-uav.space',inLanguage:'tr',description:'ESCO EST-34 otonom sabit kanat İHA geliştirme projesi'})}/>
+</head>
+<body>
+ <a class="skip" href="#main">İçeriğe geç</a>
+ <header class="site-header">
+  <a class="brand" href="#top" aria-label="ESCO-UAV ana sayfa"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M20 1 39 29H27L20 17 13 29H1Z" fill="currentColor"/><path d="M20 23 24 30h-8Z" fill="#e65a2b"/></svg><span>ESCO<span class="brand-light">—UAV</span></span></a>
+  <nav aria-label="Ana gezinme" id="main-nav"><a href="#platform">Platform</a><a href="#engineering">Mühendislik</a><a href="#journey">Yolculuk</a></nav>
+  <a class="header-link" href="#project">Projeyi tanıyın <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menüyü aç"><span></span><span></span></button>
+ </header>
+ <main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+   <div class="hero-eyebrow"><span class="status-dot"></span> BAĞIMSIZ BİR MÜHENDİSLİK YOLCULUĞU <span class="hero-year">TEKNOFEST / 2027</span></div>
+   <div class="hero-copy"><h1 id="hero-title">Mühendislikten<br/><span>gökyüzüne.</span></h1><p>Bir fikirden, uçuşun her detayına.<br/>Otonom sabit kanat platformumuz <strong>ESCO EST-34</strong> ile 2027’ye hazırlanıyoruz.</p><a class="text-link" href="#platform">Platformu keşfet <span aria-hidden="true">↓</span></a></div>
+   <div class="hero-model" id="model-stage">
+    <div class="model-rings" aria-hidden="true"></div>
+    <span class="model-mark mono">EST—34 <span>R13</span></span>
+    <img class="model-poster" id="model-poster" src="/images/est34-r13.webp" width="1100" height="750" alt="R13 CAD modelinden üretilmiş ESCO EST-34: çift kuyruk kirişli, itici pervane yerleşimli sabit kanat tasarımı" fetchpriority="high"/>
+    <div id="model-canvas" aria-label="ESCO EST-34 etkileşimli 3B model"></div>
+    <button class="activate-model" id="activate-model"><span class="button-cross" aria-hidden="true">✳</span> 3B modeli keşfet <span aria-hidden="true">↗</span></button>
+    <div class="model-tools" id="model-tools" hidden role="group" aria-label="Model görünümü"><button data-view="outer" aria-pressed="true">Dış görünüm</button><button data-view="structure" aria-pressed="false">İç yapı</button><button data-view="top" aria-pressed="false">Üstten</button><button data-view="reset" aria-label="Model açısını sıfırla">↺</button></div>
+    <p class="model-caption mono" id="model-status" aria-live="polite">R13 CAD GÖRSELLEŞTİRMESİ <span>01 / 03</span></p>
+   </div>
+   <div class="hero-bottom"><span class="mono">TASARIM REVİZYONU <b>R13</b></span><p>Dijital tasarım gelişiyor.<br/>Bir sonraki eşik: fiziksel doğrulama.</p><a href="#platform" class="scroll-cue" aria-label="Platform bölümüne git">↓</a></div>
+  </section>
+  <section class="platform section-pad" id="platform" aria-labelledby="platform-title">
+   <div class="section-top"><span class="eyebrow">01 / PLATFORM</span><span class="mono muted">SABİT KANAT · İTİCİ PERVANE · ÇİFT KUYRUK</span></div>
+   <div class="section-heading"><h2 id="platform-title">Her çizginin<br/>bir görevi var.</h2><p>Burunda görüş sistemi için alan. Gövdede erişilebilir bir yerleşim. İki karbon kiriş üzerinde kuyruk takımı. Aynı hedef için birlikte tasarlanan bir bütün.</p></div>
+   <div class="spec-row"><div><span class="spec-value">1,80<span>m</span></span><p>Nominal kanat açıklığı</p></div><div><span class="spec-value">3,558<span>kg</span></span><p>Hesaplanan toplam kütle</p></div><div><span class="spec-value">140</span><p>Tam CAD montajında gövde</p></div><div><span class="spec-value">R13</span><p>Güncel tasarım revizyonu</p></div></div>
+   <div class="blueprint">
+    <div class="blueprint-label"><span class="mono">EST-34 / PLANFORM</span><span class="drawing-dot"></span></div>
+    <svg viewBox="0 0 1000 530" role="img" aria-labelledby="plan-title"><title id="plan-title">ESCO EST-34 yerleşim şeması; nominal kanat açıklığı 1798,3 mm</title><defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".055"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="m0 0 10 5-10 5z" fill="#b7c4bd"/></marker></defs><rect width="1000" height="530" fill="url(#grid)"/>
+     <g fill="none" stroke="#8d9a93" stroke-width="1"><path d="M500 35v455" stroke-dasharray="4 8"/><path d="M112 115v-30m776 30V85M112 95h776" marker-start="url(#arrow)" marker-end="url(#arrow)"/><path d="M396 272v183M604 272v183" stroke-width="7" stroke="#7f8d84"/></g>
+     <g fill="#b6c1b7" stroke="#d4ddd3" stroke-width="1.2"><path d="m112 190 388-34v162l-388-40z"/><path d="m888 190-388-34v162l388-40z"/><path d="M348 410h304v61l-304 9z"/></g>
+     <g fill="#d66338" stroke="#e69677" stroke-width="1"><path d="m120 252 265 25v32l-265-29z"/><path d="m880 252-265 25v32l265-29z"/><path d="M352 461h296v13l-296 9z"/></g>
+     <g fill="#e0e1d4" stroke="#24362d" stroke-width="1.5"><path d="M500 119c-19 0-30 19-31 53l-1 186h64l-1-186c-1-34-12-53-31-53z"/><rect x="483" y="185" width="34" height="87" rx="6"/><rect x="392" y="414" width="8" height="57"/><rect x="600" y="414" width="8" height="57"/></g>
+     <g fill="none" stroke="#db8d6b"><path d="M470 149h-80l-28-26H280"/><path d="M535 228h70l35-18h109"/><path d="M606 398h95l40 29h80"/><path d="M454 370h92" stroke-width="3"/></g>
+     <g class="diagram-text" fill="#d4ded4"><text x="500" y="80" text-anchor="middle">1798,3 mm / NOMİNAL AÇIKLIK</text><text x="200" y="126">GÖRÜŞ ALANI</text><text x="650" y="197">SERVİS ERİŞİMİ</text><text x="746" y="448">ÇİFT KİRİŞ</text></g>
+    </svg>
+    <div class="blueprint-footer mono"><span>YERLEŞİM ŞEMASI · İMALAT ÇİZİMİ DEĞİLDİR</span><span>R13 / 24.09.2026</span></div>
+   </div>
+   <p class="data-note">Kütle, 870 g batarya adayı ve malzeme varsayımlarıyla hesaplanmıştır; fiziksel tartım sonucu değildir. Kesin nominal açıklık: 1798,3 mm.</p>
+  </section>
+  <section class="engineering section-pad" id="engineering" aria-labelledby="engineering-title">
+   <div class="section-top"><span class="eyebrow">02 / MÜHENDİSLİK</span><span class="mono muted">BİR DETAY, TÜM SİSTEMİ DEĞİŞTİRİR.</span></div>
+   <div class="section-heading"><h2 id="engineering-title">Sadece tasarlamak değil.<br/><span class="muted">Birlikte çalıştırmak.</span></h2><p>Mekanik, güç ve yazılım kararlarını aynı platformda buluşturuyoruz. Her revizyon, bu parçaların birbirine nasıl bağlandığını biraz daha netleştiriyor.</p></div>
+   <div class="feature-grid">
+    <article class="feature featured"><span class="feature-number mono">01 / MEKANİK</span><div class="joint-art" aria-hidden="true"><div class="joint-base"></div><div class="joint-wall"></div><div class="joint-gusset"></div><span class="joint-point"></span><span class="joint-label mono">3 mm / HUŞ LEVHA ADAYI</span></div><h3>Küçük detay.<br/>Daha tutarlı bir bütün.</h3><p>Batarya tutucusu; ayrı taban, dikme ve üçgen desteklerle yeniden düzenlendi. Bağlantı delikleri, kenar payları ve söküm yolu birlikte kontrol edildi.</p><span class="feature-foot mono">R13 / GÜNCELLENEN BATARYA TUTUCUSU</span></article>
+    <article class="feature"><span class="feature-number mono">02 / GÜÇ & AVİYONİK</span><div class="power-diagram" aria-label="6S enerji adayı motor kontrolü ile iki UBEC besleme koluna ayrılır"><span class="power-source">6S<small>ENERJİ ADAYI</small></span><div class="power-paths"><span>ESC <b>→ MOTOR</b></span><span>UBEC 25A <b>→ SERVOLAR</b></span><span>UBEC 10A <b>→ AVİYONİK</b></span></div></div><h3>Görevin arkasındaki enerji.</h3><p>Motor, servolar ve planlanan Gemstone mimarisi için ayrı güç kolları. Batarya paketi ve ana konnektörün seçimi, akım ve sıcaklık doğrulamasına bağlı.</p><span class="feature-foot mono">ENTEGRASYON TASARIMI / DEVAM EDİYOR</span></article>
+    <article class="feature"><span class="feature-number mono">03 / OTONOMİ & YAZILIM</span><div class="software-art" aria-hidden="true"><span>ALGILA</span><i>→</i><span>KARAR VER</span><i>→</i><span>İZLE</span><div class="signal-line"></div></div><h3>Uçaktan yer istasyonuna.</h3><p>Görü işleme, görev mantığı ve telemetri aynı veri akışında buluşuyor. Yerel yazılım zinciri testleri, donanım üzerindeki doğrulamanın hazırlığını oluşturuyor.</p><span class="feature-foot mono">GÖRÜ · GÖREV · TELEMETRİ</span></article>
+   </div>
+  </section>
+  <section class="hardware section-pad" aria-labelledby="hardware-title">
+   <div class="hardware-intro"><span class="eyebrow">03 / DONANIM</span><h2 id="hardware-title">Tasarımın<br/>gerçek parçaları.</h2><p>Güncel donanım listemiz. Teslim alınan parçaların ölçüm ve tezgâh testleri entegrasyon sürecinin bir parçası.</p><span class="mono list-revision">ENVANTER / EYLÜL 2026</span></div>
+   <div class="hardware-list">{data.hardware.map((item,i)=><details class="hardware-item"><summary><span class="hardware-index mono">{String(i+1).padStart(2,'0')}</span><div><span class="hardware-category">{item.category}</span><h3>{item.name}</h3></div><span class:list={['hardware-status',{'pending':item.status!=='Teslim alındı'}]}>{item.status}</span><span class="expand-sign" aria-hidden="true">+</span></summary><div class="hardware-detail"><p>{item.detail}</p><p class="muted">{item.status==='Teslim alındı'?'Fiziksel ölçüm ve sisteme entegrasyon doğrulaması henüz tamamlanmadı.':item.status==='Teslimat bekleniyor'?'Kart revizyonu ve fiziksel arayüzler teslimat sonrasında doğrulanacak.':'Batarya satın alınmadı. Kumanda ve ayrı kamera seçimi de henüz tamamlanmadı.'}</p></div></details>)}</div>
+  </section>
+  <section class="verification section-pad" id="verification" aria-labelledby="verification-title">
+   <div><span class="eyebrow">04 / DOĞRULAMA</span><h2 id="verification-title">İlerleme,<br/>kanıtıyla birlikte.</h2><p>R13’te geometri, kütle defteri ve dosya aktarımı için tanımlanan dijital kontroller tamamlandı. Şimdi aynı tasarımı fiziksel dünyada doğrulama zamanı.</p><a class="text-link light" href="/teknik-notlar/">Teknik notları incele <span aria-hidden="true">↗</span></a></div>
+   <div class="verification-data"><div class="big-score">14<span>/14</span></div><p class="mono">R13 DİJİTAL KONTROLLERİ</p><ul><li><span>Geometri & aktarım</span><b>Doğrulandı</b></li><li><span>Kütle & CG</span><b>Hesaplandı</b></li><li><span>Fiziksel yük testleri</span><b class="pending">Sırada</b></li><li><span>Üretim / uçuş kabulü</span><b class="pending">Açık</b></li></ul><p class="verification-note">Dijital kontrollerin geçmesi, tüm uçağın dayanım veya uçuş onayı aldığı anlamına gelmez.</p></div>
+  </section>
+  <section class="journey section-pad" id="journey" aria-labelledby="journey-title">
+   <div class="section-top"><span class="eyebrow">05 / YOLCULUK</span><span class="mono muted">HEDEF / TEKNOFEST 2027</span></div>
+   <div class="section-heading"><h2 id="journey-title">Adım adım.<br/>Gökyüzüne doğru.</h2><p>Son çizimden ilk uçuşa uzanan yol, her sistemin birlikte çalışmasıyla tamamlanacak.</p></div>
+   <div class="timeline">{milestones.map(([num,title,status,copy,state])=><article class:list={['milestone',state]}><div class="milestone-top"><span class="mono">{num}</span><span class="timeline-node"></span></div><span class="milestone-status mono">{status}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+  </section>
+  <section class="project section-pad" id="project"><div class="project-symbol" aria-hidden="true">↗</div><span class="eyebrow">ESCO-UAV / 2027</span><h2>Bir sonraki adımı<br/>birlikte tasarlıyoruz.</h2><div class="project-bottom"><p>Malzemeden yazılıma, analizden uçuşa.<br/>ESCO EST-34’ün gelişimini takip edin.</p><a class="button-dark" href="/teknik-notlar/">Güncel proje notları <span aria-hidden="true">↗</span></a></div></section>
+ </main>
+ <footer><a class="brand" href="#top">ESCO<span class="brand-light">—UAV</span></a><p>Otonom sistemler. Ortak bir hedef.</p><div class="mono">© 2026 ESCO-UAV <span>R13 · 24 EYLÜL 2026</span></div></footer>
+ <script>
+  const toggle=document.querySelector<HTMLButtonElement>('.menu-toggle');const nav=document.querySelector('#main-nav');
+  toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');nav?.classList.toggle('open',open);});
+  nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle?.setAttribute('aria-expanded','false');toggle?.setAttribute('aria-label','Menüyü aç');nav.classList.remove('open');}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){toggle?.setAttribute('aria-expanded','false');toggle?.setAttribute('aria-label','Menüyü aç');nav?.classList.remove('open');}});
+  document.querySelector('#activate-model')?.addEventListener('click',async()=>{const button=document.querySelector<HTMLButtonElement>('#activate-model')!;button.disabled=true;button.textContent='Model hazırlanıyor…';try{const {initModel}=await import('../scripts/model');await initModel();button.hidden=true;}catch{button.disabled=false;button.textContent='3B modeli yeniden dene ↗';document.querySelector('#model-status')!.textContent='3B görünüm açılamadı. R13 görseli görüntüleniyor.';}});
+ </script>
+</body>
+</html>

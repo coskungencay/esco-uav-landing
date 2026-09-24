@@ -1,0 +1,17 @@
+{
+ "name":"ESCO EST-34","team":"ESCO-UAV","revision":"R13","updated":"2026-09-24","targetYear":2027,
+ "spanMm":1798.3,"rootChordMm":373.7,"tipChordMm":280.3,"areaM2":0.5880441,
+ "nominalMassG":3557.8889642900695,"batteryCenterMm":224.6844811868119,"cgTargetMm":4.6,
+ "cadBodies":140,"digitalChecksPassed":14,"digitalChecksTotal":14,"localBodies":33,
+ "manufacturingReleased":false,"flightReleased":false,
+ "hardware":[
+  {"category":"Tahrik","name":"SunnySky X3520-08","detail":"520 KV · 6S tasarım mimarisi","status":"Teslim alındı"},
+  {"category":"Motor kontrolü","name":"Hobbywing FlyFun","detail":"120A V5 · elektronik hız kontrolcüsü","status":"Teslim alındı"},
+  {"category":"Kontrol yüzeyleri","name":"5 × KST X10 Pro-A","detail":"Kanatçık, elevatör ve dümen servoları","status":"Teslim alındı"},
+  {"category":"Güç dağıtımı","name":"Hobbywing UBEC","detail":"25A HV + 10A HV · iki ayrı besleme kolu","status":"Teslim alındı"},
+  {"category":"Konumlandırma","name":"MATEKSYS M10Q-5883","detail":"GNSS ve pusula modülü","status":"Teslim alındı"},
+  {"category":"Güç izleme","name":"HCS-150A + ADS1115","detail":"Akım / gerilim ölçüm zinciri","status":"Teslim alındı"},
+  {"category":"Planlanan aviyonik","name":"T3-GEM-O1","detail":"Gemstone tabanlı aviyonik mimari","status":"Teslimat bekleniyor"},
+  {"category":"Enerji","name":"6S batarya","detail":"7000 mAh kapasite adayı · paket / konnektör seçimi açık","status":"Seçim aşamasında"}
+ ]
+}
