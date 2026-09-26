@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/manrope';
+import '@fontsource-variable/saira/wdth.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '../styles/global.css';
 import data from '../data/project.json';
@@ -14,14 +15,14 @@ const milestones=[
 <html lang="tr">
 <head>
  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
- <meta name="theme-color" content="#eeeee7"/>
+ <meta name="theme-color" content="#EFF0F2"/>
  <title>ESCO-UAV — Mühendislikten gökyüzüne.</title>
  <meta name="description" content="ESCO EST-34. TEKNOFEST 2027 Savaşan İHA için geliştirilen otonom sabit kanat platformu. Güncel R13 tasarımı, 3B model ve mühendislik yolculuğu."/>
- <link rel="canonical" href="https://esco-uav.space/"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+ <link rel="canonical" href="https://esco-uav.space/"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
  <meta property="og:type" content="website"/><meta property="og:locale" content="tr_TR"/>
  <meta property="og:title" content="ESCO-UAV — Mühendislikten gökyüzüne."/>
  <meta property="og:description" content="2027’ye doğru. ESCO EST-34’ün yeni R13 tasarımını keşfedin."/>
- <meta property="og:url" content="https://esco-uav.space/"/><meta property="og:image" content="https://esco-uav.space/images/og-r13.jpg"/>
+ <meta property="og:url" content="https://esco-uav.space/"/><meta property="og:image" content="https://esco-uav.space/images/og-brand.jpg"/>
  <meta name="twitter:card" content="summary_large_image"/>
  <link rel="preload" as="image" href="/images/est34-r13.webp"/>
  <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'ESCO-UAV',url:'https://esco-uav.space',inLanguage:'tr',description:'ESCO EST-34 otonom sabit kanat İHA geliştirme projesi'})}/>
@@ -29,7 +30,7 @@ const milestones=[
 <body>
  <a class="skip" href="#main">İçeriğe geç</a>
  <header class="site-header">
-  <a class="brand" href="#top" aria-label="ESCO-UAV ana sayfa"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M20 1 39 29H27L20 17 13 29H1Z" fill="currentColor"/><path d="M20 23 24 30h-8Z" fill="#e65a2b"/></svg><span>ESCO<span class="brand-light">—UAV</span></span></a>
+  <a class="brand" href="#top" aria-label="ESCO-UAV ana sayfa"><img src="/brand/esco-uav-yatay.svg" alt="" width="165" height="30"/></a>
   <nav aria-label="Ana gezinme" id="main-nav"><a href="#platform">Platform</a><a href="#engineering">Mühendislik</a><a href="#journey">Yolculuk</a></nav>
   <a class="header-link" href="#project">Projeyi tanıyın <span aria-hidden="true">↗</span></a>
   <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menüyü aç"><span></span><span></span></button>
@@ -55,13 +56,13 @@ const milestones=[
    <div class="spec-row"><div><span class="spec-value">1,80<span>m</span></span><p>Nominal kanat açıklığı</p></div><div><span class="spec-value">3,558<span>kg</span></span><p>Hesaplanan toplam kütle</p></div><div><span class="spec-value">140</span><p>Tam CAD montajında gövde</p></div><div><span class="spec-value">R13</span><p>Güncel tasarım revizyonu</p></div></div>
    <div class="blueprint">
     <div class="blueprint-label"><span class="mono">EST-34 / PLANFORM</span><span class="drawing-dot"></span></div>
-    <svg viewBox="0 0 1000 530" role="img" aria-labelledby="plan-title"><title id="plan-title">ESCO EST-34 yerleşim şeması; nominal kanat açıklığı 1798,3 mm</title><defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".055"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="m0 0 10 5-10 5z" fill="#b7c4bd"/></marker></defs><rect width="1000" height="530" fill="url(#grid)"/>
-     <g fill="none" stroke="#8d9a93" stroke-width="1"><path d="M500 35v455" stroke-dasharray="4 8"/><path d="M112 115v-30m776 30V85M112 95h776" marker-start="url(#arrow)" marker-end="url(#arrow)"/><path d="M396 272v183M604 272v183" stroke-width="7" stroke="#7f8d84"/></g>
-     <g fill="#b6c1b7" stroke="#d4ddd3" stroke-width="1.2"><path d="m112 190 388-34v162l-388-40z"/><path d="m888 190-388-34v162l388-40z"/><path d="M348 410h304v61l-304 9z"/></g>
-     <g fill="#d66338" stroke="#e69677" stroke-width="1"><path d="m120 252 265 25v32l-265-29z"/><path d="m880 252-265 25v32l265-29z"/><path d="M352 461h296v13l-296 9z"/></g>
-     <g fill="#e0e1d4" stroke="#24362d" stroke-width="1.5"><path d="M500 119c-19 0-30 19-31 53l-1 186h64l-1-186c-1-34-12-53-31-53z"/><rect x="483" y="185" width="34" height="87" rx="6"/><rect x="392" y="414" width="8" height="57"/><rect x="600" y="414" width="8" height="57"/></g>
-     <g fill="none" stroke="#db8d6b"><path d="M470 149h-80l-28-26H280"/><path d="M535 228h70l35-18h109"/><path d="M606 398h95l40 29h80"/><path d="M454 370h92" stroke-width="3"/></g>
-     <g class="diagram-text" fill="#d4ded4"><text x="500" y="80" text-anchor="middle">1798,3 mm / NOMİNAL AÇIKLIK</text><text x="200" y="126">GÖRÜŞ ALANI</text><text x="650" y="197">SERVİS ERİŞİMİ</text><text x="746" y="448">ÇİFT KİRİŞ</text></g>
+    <svg viewBox="0 0 1000 530" role="img" aria-labelledby="plan-title"><title id="plan-title">ESCO EST-34 yerleşim şeması; nominal kanat açıklığı 1798,3 mm</title><defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".055"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="m0 0 10 5-10 5z" fill="#B7BBC4"/></marker></defs><rect width="1000" height="530" fill="url(#grid)"/>
+     <g fill="none" stroke="#89909E" stroke-width="1"><path d="M500 35v455" stroke-dasharray="4 8"/><path d="M112 115v-30m776 30V85M112 95h776" marker-start="url(#arrow)" marker-end="url(#arrow)"/><path d="M396 272v183M604 272v183" stroke-width="7" stroke="#707F9C"/></g>
+     <g fill="#B5B9C2" stroke="#D4D7DC" stroke-width="1.2"><path d="m112 190 388-34v162l-388-40z"/><path d="m888 190-388-34v162l388-40z"/><path d="M348 410h304v61l-304 9z"/></g>
+     <g fill="#E0601A" stroke="#F4A574" stroke-width="1"><path d="m120 252 265 25v32l-265-29z"/><path d="m880 252-265 25v32l265-29z"/><path d="M352 461h296v13l-296 9z"/></g>
+     <g fill="#D7D9DE" stroke="#1F2937" stroke-width="1.5"><path d="M500 119c-19 0-30 19-31 53l-1 186h64l-1-186c-1-34-12-53-31-53z"/><rect x="483" y="185" width="34" height="87" rx="6"/><rect x="392" y="414" width="8" height="57"/><rect x="600" y="414" width="8" height="57"/></g>
+     <g fill="none" stroke="#F29A62"><path d="M470 149h-80l-28-26H280"/><path d="M535 228h70l35-18h109"/><path d="M606 398h95l40 29h80"/><path d="M454 370h92" stroke-width="3"/></g>
+     <g class="diagram-text" fill="#D5D8DD"><text x="500" y="80" text-anchor="middle">1798,3 mm / NOMİNAL AÇIKLIK</text><text x="200" y="126">GÖRÜŞ ALANI</text><text x="650" y="197">SERVİS ERİŞİMİ</text><text x="746" y="448">ÇİFT KİRİŞ</text></g>
     </svg>
     <div class="blueprint-footer mono"><span>YERLEŞİM ŞEMASI · İMALAT ÇİZİMİ DEĞİLDİR</span><span>R13 / 24.09.2026</span></div>
    </div>
@@ -91,7 +92,7 @@ const milestones=[
   </section>
   <section class="project section-pad" id="project"><div class="project-symbol" aria-hidden="true">↗</div><span class="eyebrow">ESCO-UAV / 2027</span><h2>Bir sonraki adımı<br/>birlikte tasarlıyoruz.</h2><div class="project-bottom"><p>Malzemeden yazılıma, analizden uçuşa.<br/>ESCO EST-34’ün gelişimini takip edin.</p><a class="button-dark" href="/teknik-notlar/">Güncel proje notları <span aria-hidden="true">↗</span></a></div></section>
  </main>
- <footer><a class="brand" href="#top">ESCO<span class="brand-light">—UAV</span></a><p>Otonom sistemler. Ortak bir hedef.</p><div class="mono">© 2026 ESCO-UAV <span>R13 · 24 EYLÜL 2026</span></div></footer>
+ <footer><a class="brand" href="#top" aria-label="ESCO-UAV ana sayfa"><img src="/brand/esco-uav-yatay.svg" alt="" width="165" height="30"/></a><p>Otonom sistemler. Ortak bir hedef.</p><div class="mono">© 2026 ESCO-UAV <span>R13 · 24 EYLÜL 2026</span></div></footer>
  <script>
   const toggle=document.querySelector<HTMLButtonElement>('.menu-toggle');const nav=document.querySelector('#main-nav');
   toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');nav?.classList.toggle('open',open);});

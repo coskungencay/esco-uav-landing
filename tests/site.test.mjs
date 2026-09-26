@@ -34,7 +34,7 @@ test('generated pages have unique IDs, working anchors, local assets and metadat
  }
  const html=read(pages[0]);assert.doesNotMatch(html,/Pixhawk|Raspberry Pi|2100\s*mm|candidate_003/);
  assert.match(html,/fiziksel tartım sonucu değildir/);assert.match(html,/Batarya satın alınmadı/);
- assert.ok(existsSync('dist/images/og-r13.jpg'));
+ assert.ok(existsSync('dist/images/og-brand.jpg'));
 });
 test('initial page does not eagerly download CAD or Three.js',()=>{
  const html=read(pages[0]);const scripts=[...html.matchAll(/<script[^>]*src="([^"\s]+)"/g)].map(x=>x[1]);

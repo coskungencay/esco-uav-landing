@@ -6,7 +6,7 @@ export async function initModel(){
  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'});
  renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.75));renderer.setClearColor(0x000000,0);
  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.85;
- const scene=new THREE.Scene();scene.add(new THREE.HemisphereLight(0xffffff,0x969d86,1.8));
+ const scene=new THREE.Scene();scene.add(new THREE.HemisphereLight(0xffffff,0x8f95a1,1.8));
  const key=new THREE.DirectionalLight(0xfff4df,2);key.position.set(-2,4,3);scene.add(key);
  const fill=new THREE.DirectionalLight(0xdbe6ff,.6);fill.position.set(3,2,-1);scene.add(fill);
  const camera=new THREE.OrthographicCamera(-1,1,.7,-.7,.01,30);const home=new THREE.Vector3(2.2,2.0,3.1);
